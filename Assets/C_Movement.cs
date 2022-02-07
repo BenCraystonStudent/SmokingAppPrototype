@@ -8,6 +8,7 @@ public class C_Movement : MonoBehaviour
 {
     public float speed = 1;
     public XRNode inputSource;
+    private XRRig rig;
     private Vector2 i_axis;
     private CharacterController playerMovement;
 
@@ -15,6 +16,7 @@ public class C_Movement : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<CharacterController>();
+        rig = GetComponent<XRRig>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class C_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(i_axis.x, 0, i_axis.y);
+        Quaternion yaw = Quaternion.Euler(0, rig.cameraGameObject.transform.eulerAngles.y, 0);
+        Vector3 direction = yaw * new Vector3(i_axis.x, 0, i_axis.y);
 
         playerMovement.Move(direction * Time.deltaTime * speed);
     }

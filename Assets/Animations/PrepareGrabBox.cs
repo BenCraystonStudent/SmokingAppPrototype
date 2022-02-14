@@ -6,10 +6,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PrepareGrabBox : MonoBehaviour
 {
     public Animator animator;
+    public GameObject rightHand;
 
     public void HoverOver()
     {
-        animator = GetComponent<Animator>();
+        animator = rightHand.GetComponent<Animator>();
         animator.SetBool("isCloseToBox", true);
+    }
+
+    public bool IsCloseToBox()
+    {
+        animator = rightHand.GetComponent<Animator>();
+        return animator.GetBool("isCloseToBox");
     }
 }

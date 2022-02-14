@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PrepareGrabBox : MonoBehaviour
 {
-    [SerializeField] private Animator mAnimator;
+    public Animator animator;
 
-    private void OnTriggerEnter(Collider other)
+    public void HoverOver()
     {
-        if (other.CompareTag("GameController"))
-        {
-            mAnimator.SetBool("isCloseToBox", true);
-        }
+        animator = GetComponent<Animator>();
+        animator.SetBool("isCloseToBox", true);
     }
 }

@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: 1288345426803864665
     second: Armature|Armature|r_hand_skeletal_lowres|BaseLayer
+  - first:
+      74: -8612994791844490777
+    second: Armature|ArmatureAction (1)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -67,11 +70,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|r_hand_skeletal_lowres|BaseLayer
-      takeName: Armature|Armature|r_hand_skeletal_lowres|BaseLayer
+      name: Armature|ArmatureAction (1)
+      takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 0
-      lastFrame: 1
+      firstFrame: 1
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

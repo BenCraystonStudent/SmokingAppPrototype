@@ -14,9 +14,9 @@ public class PrepareGrabBox : MonoBehaviour
         animator.SetBool("isCloseToBox", true);
     }
 
-    public bool IsCloseToBox()
+    public void HoverEnd()
     {
         animator = rightHand.GetComponent<Animator>();
-        return animator.GetBool("isCloseToBox");
+        animator.SetBool("isCloseToBox", false);
     }
 }

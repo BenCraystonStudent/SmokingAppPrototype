@@ -8,6 +8,11 @@ public class PrepareGrabBox : MonoBehaviour
     public Animator animator;
     public GameObject rightHand;
 
+    private void Start()
+    {
+        animator.SetBool("isCloseToBox", false);
+    }
+
     public void HoverOver()
     {
         animator = rightHand.GetComponent<Animator>();

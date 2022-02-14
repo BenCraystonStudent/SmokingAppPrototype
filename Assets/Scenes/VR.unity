@@ -1489,7 +1489,7 @@ GameObject:
   - component: {fileID: 1128728086}
   - component: {fileID: 1128728088}
   - component: {fileID: 1128728087}
-  - component: {fileID: 1128728090}
+  - component: {fileID: 1128728089}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
---- !u!95 &1128728090
+--- !u!95 &1128728089
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1629,7 +1629,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128728084}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4f7574605ea6e364e87ab56957ffdd20, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67defcfcab4d51c4c98dcf1934e71dfc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -3558,7 +3558,7 @@ MonoBehaviour:
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1843977563}
+      - m_Target: {fileID: 0}
         m_MethodName: HoverOver
         m_Mode: 1
         m_Arguments:
@@ -3664,26 +3664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712e9fb0658162443ae283159e96379e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1128728090}
---- !u!95 &1843977564
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843977559}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4f7574605ea6e364e87ab56957ffdd20, type: 3}
-  m_Controller: {fileID: 9100000, guid: 67defcfcab4d51c4c98dcf1934e71dfc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  animator: {fileID: 1128728089}
 --- !u!1 &1976783745
 GameObject:
   m_ObjectHideFlags: 0

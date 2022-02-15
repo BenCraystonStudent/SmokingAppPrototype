@@ -1415,13 +1415,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024200048}
-  m_LocalRotation: {x: 0.5038978, y: 0.5262445, z: 0.5162977, w: 0.45010045}
-  m_LocalPosition: {x: 0.062, y: 0.225, z: 1.326}
+  m_LocalRotation: {x: 0.70851445, y: 0.34043926, z: 0.20816448, w: 0.5820447}
+  m_LocalPosition: {x: 3.05, y: -1.16, z: 1.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1843977566}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -5.151, y: -266.449, z: -267.643}
+  m_LocalEulerAnglesHint: {x: 43.082, y: -251.16599, z: -262.87}
 --- !u!1 &1025284018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,22 +3814,66 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843977567}
+        m_MethodName: GrabbedBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843977567}
+        m_MethodName: LetGoOfBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSelectCanceled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
   m_AttachTransform: {fileID: 1024200049}
-  m_AttachEaseInTime: 0.15
+  m_AttachEaseInTime: 0.5
   m_MovementType: 2
   m_TrackPosition: 1
   m_SmoothPosition: 0
@@ -3909,6 +3953,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1249656854}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1843977567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843977559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d72c9721c7ce3448aa7f535b768c3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 862428914}
+  rightHand: {fileID: 862428912}
 --- !u!1 &1976783745
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,20 +4,8 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 4616749543534694763
-    second: Box|BoxAction.001
-  - first:
-      74: 20560489924747530
-    second: Box|BoxLidAction
-  - first:
-      74: -1422011007694221501
-    second: Armature|ArmatureAction.001
-  - first:
-      74: -5732135949761254483
-    second: Armature|BoxAction.001
-  - first:
-      74: 7609089080385462904
-    second: Armature|BoxLidAction
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
     materialImportMode: 1

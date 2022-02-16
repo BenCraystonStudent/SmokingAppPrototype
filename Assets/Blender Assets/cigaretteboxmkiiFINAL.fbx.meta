@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ButtTexture
+    second: {fileID: 2100000, guid: 807c39cd7439e5343bf8c0a48a7ba4dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1af123de8a65f17458558f6f679fce48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 4f3dcd3ebf8959141bfcfe43da15c161, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -18,5 +18,11 @@ public class actionBox : MonoBehaviour
         mAnimator.SetBool("boxAction", true);
     }
 
+    public void CloseBox()
+    {
+        mAnimator = cigaretteBox.GetComponent<Animator>();
+        mAnimator.SetBool("boxAction", false);
+    }
+
     
 }

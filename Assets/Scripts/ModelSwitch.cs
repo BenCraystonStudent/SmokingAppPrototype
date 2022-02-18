@@ -6,23 +6,27 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ModelSwitch : MonoBehaviour
 {
     public GameObject wCigarette, woCigarette;
-    public XRController controller;
-    
+    public InputDevice controller1, controller2;
+
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        controller1 = GetComponent<InputDevice>();
+        controller2 = GetComponent<InputDevice>();
+    }
+
     void Start()
     {
-        controller = GetComponentInParent<XRController>();
-        woCigarette.SetActive(true);
-        wCigarette.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary))
+        if (controller1.TryGetFeatureValue(CommonUsages.primaryButton, out bool primary) && primary)
         {
-            wCigarette.SetActive(true);
-            woCigarette.SetActive(false);
+            Debug.Log("Pressed!");
         }
     }
 }

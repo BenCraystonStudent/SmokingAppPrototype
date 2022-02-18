@@ -17,7 +17,15 @@ public class ModelSwitch : MonoBehaviour
 
     public void ChangeModels()
     {
+        if (woCigarette.activeSelf)
+        {
             wCigarette.SetActive(true);
             woCigarette.SetActive(false);
+        }
+        else
+        {
+            woCigarette.SetActive(true);
+            wCigarette.SetActive(false);
+        }
     }
 }

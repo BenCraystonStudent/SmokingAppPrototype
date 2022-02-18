@@ -1459,6 +1459,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &758579747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452006832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &758579748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758579747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763591c34a0efee48b83142ecfecebfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wCigarette: {fileID: 8339513207532459927, guid: 0707ce26cce083d489e82b2df76d0e23,
+    type: 3}
+  woCigarette: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  controller: {fileID: 1154591701}
 --- !u!1 &848734324
 GameObject:
   m_ObjectHideFlags: 0

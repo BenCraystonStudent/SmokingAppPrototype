@@ -17,7 +17,7 @@ public class ModelSwitch : MonoBehaviour
 
     public void ChangeModels()
     {
-        wCigarette.SetActive(true);
-        woCigarette.SetActive(false);
+            wCigarette.SetActive(true);
+            woCigarette.SetActive(false);
     }
 }

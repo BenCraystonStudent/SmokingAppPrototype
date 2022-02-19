@@ -667,6 +667,7 @@ MonoBehaviour:
     type: 3}
   woCigarette: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
     type: 3}
+  cigaretteBox: {fileID: 0}
 --- !u!1001 &212813979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2369,6 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 154839343}
   woCigarette: {fileID: 758579747}
+  cigaretteBox: {fileID: 150522695}
 --- !u!114 &1154591705
 MonoBehaviour:
   m_ObjectHideFlags: 0

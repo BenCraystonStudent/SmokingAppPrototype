@@ -8,7 +8,7 @@ public class ModelSwitch : MonoBehaviour
     public GameObject wCigarette, woCigarette, cigaretteBox;
     public Animator mAnimator;
     private float distance;
-    private bool isOpen;
+    bool isOpen;
 
     // Start is called before the first frame update
 
@@ -16,6 +16,7 @@ public class ModelSwitch : MonoBehaviour
     {
         woCigarette.SetActive(true);
         wCigarette.SetActive(false);
+        mAnimator = cigaretteBox.GetComponent<Animator>();
         isOpen = mAnimator.GetBool("boxAction");
     }
 
@@ -33,8 +34,9 @@ public class ModelSwitch : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         distance = Vector3.Distance(woCigarette.transform.position, cigaretteBox.transform.position);
+        Debug.Log(isOpen.ToString());
     }
 }

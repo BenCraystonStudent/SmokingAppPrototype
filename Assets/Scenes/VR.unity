@@ -667,6 +667,8 @@ MonoBehaviour:
     type: 3}
   woCigarette: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
     type: 3}
+  cigaretteBox: {fileID: 0}
+  mAnimator: {fileID: 0}
 --- !u!1001 &212813979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1559,6 +1561,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8339513207532459927, guid: 0707ce26cce083d489e82b2df76d0e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: LeftHandCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0707ce26cce083d489e82b2df76d0e23, type: 3}
 --- !u!1 &758579747 stripped
@@ -1980,7 +1987,6 @@ GameObject:
   - component: {fileID: 1128728086}
   - component: {fileID: 1128728088}
   - component: {fileID: 1128728087}
-  - component: {fileID: 1128728089}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -2111,18 +2117,6 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
---- !u!114 &1128728089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128728084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4385830e256436f488cf8f306b2da480, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2224,7 @@ GameObject:
   - component: {fileID: 1154591702}
   - component: {fileID: 1154591705}
   - component: {fileID: 1154591704}
+  - component: {fileID: 1154591706}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -2364,6 +2359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 154839343}
   woCigarette: {fileID: 758579747}
+  cigaretteBox: {fileID: 150522695}
+  mAnimator: {fileID: 1154591706}
 --- !u!114 &1154591705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2394,6 +2391,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &1154591706
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154591699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc9d85e09124dfd4190cea6b9479c82b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1174240687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
+        type: 3}
+      propertyPath: m_TagString
+      value: LeftHandCollider
       objectReference: {fileID: 0}
     - target: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b,
         type: 3}

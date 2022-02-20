@@ -1991,7 +1991,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1085057929}
+        m_MethodName: ToggleFlames
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
@@ -2050,6 +2061,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1340790588}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085057929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085057924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1c3ada216d476408f65003dc0e268f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHand: {fileID: 1128728084}
+  cigaretteLighter: {fileID: 1085057924}
+  flames: {fileID: 1424655800}
 --- !u!1001 &1127104357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2146,6 +2172,7 @@ GameObject:
   - component: {fileID: 1128728086}
   - component: {fileID: 1128728088}
   - component: {fileID: 1128728087}
+  - component: {fileID: 1128728089}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -2276,6 +2303,25 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
+--- !u!114 &1128728089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128728084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a52b35dd7f49f468b494fa29e800dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  bindings:
+  - button: 4
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,7 +3143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 437eb59b1a725a44eb0a2ec15d272d5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.164
+      value: 1.168
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 437eb59b1a725a44eb0a2ec15d272d5b, type: 3}
       propertyPath: m_LocalPosition.z

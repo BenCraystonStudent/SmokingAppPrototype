@@ -26,11 +26,11 @@ public class ModelSwitch : MonoBehaviour
             wCigarette.SetActive(true);
             woCigarette.SetActive(false);
         }
-        else
-        {
-            woCigarette.SetActive(true);
-            wCigarette.SetActive(false);
-        }
+        //else
+        //{
+           // woCigarette.SetActive(true);
+           // wCigarette.SetActive(false);
+       // }
     }
 
     void Update()

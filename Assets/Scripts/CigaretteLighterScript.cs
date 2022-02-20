@@ -16,14 +16,12 @@ public class CigaretteLighterScript : MonoBehaviour
 
     public void ToggleFlames()
     {
-        if (flames.isStopped)
-        {
-            flames.Play();
-        }
-        else
-        {
-            flames.Stop();
-        }
+        flames.Play();
+    }
+
+    public void StopFlames()
+    {
+        flames.Stop();
     }
 
     // Update is called once per frame

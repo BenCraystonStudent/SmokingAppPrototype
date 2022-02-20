@@ -2441,7 +2441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 154839343}
   woCigarette: {fileID: 758579747}
-  cigarette: {fileID: 0}
+  cigarette: {fileID: 919132149155446097, guid: bb29919d3fa3c13448abf1922a0abde3,
+    type: 3}
 --- !u!1 &1174240687
 GameObject:
   m_ObjectHideFlags: 0

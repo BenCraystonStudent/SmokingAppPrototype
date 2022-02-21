@@ -1871,7 +1871,12 @@ MonoBehaviour:
   cigaretteBox: {fileID: 0}
   heldCigarette: {fileID: 0}
   mAnimator: {fileID: 0}
-  nAnimator: {fileID: 0}
+--- !u!1 &978002432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb29919d3fa3c13448abf1922a0abde3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033727625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025284018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2353,7 @@ GameObject:
   - component: {fileID: 1128728087}
   - component: {fileID: 1128728090}
   - component: {fileID: 1128728089}
+  - component: {fileID: 1128728091}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -2503,7 +2509,18 @@ MonoBehaviour:
     pressType: 1
     OnActive:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1128728091}
+          m_MethodName: DropFromRightHand
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1128728090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2523,7 +2540,23 @@ MonoBehaviour:
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
   mAnimator: {fileID: 758579748}
-  nAnimator: {fileID: 0}
+--- !u!114 &1128728091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128728084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a6e7c3f548ce64786c7c9fae748fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wCigarette: {fileID: 1400249369}
+  woCigarette: {fileID: 862428912}
+  wCigaretteR: {fileID: 1400249369}
+  woCigaretteR: {fileID: 862428912}
+  cigarette: {fileID: 978002432}
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2895,6 @@ MonoBehaviour:
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
   mAnimator: {fileID: 1154591706}
-  nAnimator: {fileID: 0}
 --- !u!114 &1154591705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2883,7 +2915,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1154591707}
-          m_MethodName: Drop
+          m_MethodName: DropFromLeftHand
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2958,6 +2990,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 866830234}
   woCigarette: {fileID: 758579747}
+  wCigaretteR: {fileID: 1400249369}
+  woCigaretteR: {fileID: 862428912}
   cigarette: {fileID: 84703670}
 --- !u!1 &1194417495
 GameObject:

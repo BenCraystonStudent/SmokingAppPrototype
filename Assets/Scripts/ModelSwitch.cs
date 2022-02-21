@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ModelSwitch : MonoBehaviour
 {
     public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigaretteBox, heldCigarette;
-    public Animator mAnimator, nAnimator;
+    public Animator mAnimator;
     private float boxDistance, cigaretteDistance;
 
     // Start is called before the first frame update

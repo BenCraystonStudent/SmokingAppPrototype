@@ -35,14 +35,26 @@ public class ModelSwitch : MonoBehaviour
        // }
     }
 
-    public void SwitchCigaretteHeldHand()
+    public void SwitchCigaretteHeldHandToRight()
     {
         if(wCigarette.activeSelf && cigaretteDistance <= 0.12)
         {
             wCigarette.SetActive(false);
             woCigarette.SetActive(true);
             wCigaretteR.SetActive(true);
+            woCigaretteR.SetActive(false);
+        }
+
+    }
+
+    public void SwitchCigaretteHeldHandToLeft()
+    {
+        if(wCigaretteR.activeSelf && cigaretteDistance <= 0.12 && boxDistance >= 0.15)
+        {
+            wCigarette.SetActive(true);
             woCigarette.SetActive(false);
+            woCigaretteR.SetActive(true);
+            wCigaretteR.SetActive(false);
         }
     }
 

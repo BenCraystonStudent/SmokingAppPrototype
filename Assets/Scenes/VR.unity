@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a52b35dd7f49f468b494fa29e800dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1128728086}
   bindings:
   - button: 0
     pressType: 2

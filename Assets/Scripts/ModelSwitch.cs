@@ -15,6 +15,8 @@ public class ModelSwitch : MonoBehaviour
     {
         woCigarette.SetActive(true);
         wCigarette.SetActive(false);
+        woCigaretteR.SetActive(true);
+        wCigaretteR.SetActive(false);
         mAnimator = cigaretteBox.GetComponent<Animator>();
         mAnimator.GetBool("boxAction");
     }

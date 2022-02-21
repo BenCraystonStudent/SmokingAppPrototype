@@ -36,6 +36,7 @@ public class DropCigarette : MonoBehaviour
             cigarette = Instantiate(cigarette, handRightPosition, handRightRotation);
             mAnimator.SetBool("isCloseToBox", false);
             mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
         }
     }    
 

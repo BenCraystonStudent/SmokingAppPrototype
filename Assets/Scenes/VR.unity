@@ -1626,6 +1626,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1452006832}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &758579748 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 109434732388006827, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452006832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &848734324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,11 +2432,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 866830234}
   woCigarette: {fileID: 758579747}
-  wCigaretteR: {fileID: 0}
-  woCigaretteR: {fileID: 1400249369}
-  cigaretteBox: {fileID: 0}
+  wCigaretteR: {fileID: 1400249369}
+  woCigaretteR: {fileID: 862428912}
+  cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
-  mAnimator: {fileID: 0}
+  mAnimator: {fileID: 758579748}
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,10 +2770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wCigarette: {fileID: 866830234}
   woCigarette: {fileID: 758579747}
-  wCigaretteR: {fileID: 0}
-  woCigaretteR: {fileID: 0}
+  wCigaretteR: {fileID: 1400249369}
+  woCigaretteR: {fileID: 862428912}
   cigaretteBox: {fileID: 150522695}
-  heldCigarette: {fileID: 0}
+  heldCigarette: {fileID: 1491565183}
   mAnimator: {fileID: 1154591706}
 --- !u!114 &1154591705
 MonoBehaviour:

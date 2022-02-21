@@ -7,6 +7,7 @@ public class DropCigarette : MonoBehaviour
     public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette;
     private Vector3 handLeftPosition, handRightPosition;
     private Quaternion handLeftRotation, handRightRotation;
+    public Animator mAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,8 @@ public class DropCigarette : MonoBehaviour
             woCigaretteR.SetActive(true);
             wCigaretteR.SetActive(false);
             cigarette = Instantiate(cigarette, handRightPosition, handRightRotation);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
         }
     }    
 

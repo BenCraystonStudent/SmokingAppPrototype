@@ -5,9 +5,9 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 public class ModelSwitch : MonoBehaviour
 {
-    public GameObject wCigarette, woCigarette, cigaretteBox;
+    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigaretteBox, heldCigarette;
     public Animator mAnimator;
-    private float distance;
+    private float boxDistance, cigaretteDistance;
 
     // Start is called before the first frame update
 
@@ -21,7 +21,7 @@ public class ModelSwitch : MonoBehaviour
 
     public void ChangeModels()
     {
-        if (woCigarette.activeSelf && distance <= 0.15 && mAnimator.GetBool("boxAction"))
+        if (woCigarette.activeSelf && boxDistance <= 0.15 && mAnimator.GetBool("boxAction"))
         {
             wCigarette.SetActive(true);
             woCigarette.SetActive(false);
@@ -33,9 +33,21 @@ public class ModelSwitch : MonoBehaviour
        // }
     }
 
+    public void SwitchCigaretteHeldHand()
+    {
+        if(wCigarette.activeSelf && cigaretteDistance <= 0.12)
+        {
+            wCigarette.SetActive(false);
+            woCigarette.SetActive(true);
+            wCigaretteR.SetActive(true);
+            woCigarette.SetActive(false);
+        }
+    }
+
     void Update()
     {
-        distance = Vector3.Distance(woCigarette.transform.position, cigaretteBox.transform.position);
+        boxDistance = Vector3.Distance(woCigarette.transform.position, cigaretteBox.transform.position);
+        cigaretteDistance = Vector3.Distance(heldCigarette.transform.position, wCigarette.transform.position);
         Debug.Log(mAnimator.GetBool("boxAction").ToString());
     }
 }

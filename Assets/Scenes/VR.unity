@@ -884,6 +884,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe6256a4b48e784d907c0da5e7057ce, type: 3}
+--- !u!1001 &299223353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1154591700}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_Name
+      value: lefthandholdingcigarette
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80d6e88b9bec67444893da20300fe82e, type: 3}
 --- !u!1 &364713099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1943,34 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1536416544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &866830234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80d6e88b9bec67444893da20300fe82e,
+    type: 3}
+  m_PrefabInstance: {fileID: 299223353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &866830235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 80d6e88b9bec67444893da20300fe82e,
+    type: 3}
+  m_PrefabInstance: {fileID: 299223353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &866830236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866830234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763591c34a0efee48b83142ecfecebfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wCigarette: {fileID: 866830234}
+  woCigarette: {fileID: 758579747}
+  cigaretteBox: {fileID: 0}
+  mAnimator: {fileID: 0}
 --- !u!1 &1025284018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,6 +2704,7 @@ Transform:
   - {fileID: 386685556}
   - {fileID: 154839344}
   - {fileID: 84703674}
+  - {fileID: 866830235}
   m_Father: {fileID: 1025284019}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2704,7 +2817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763591c34a0efee48b83142ecfecebfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wCigarette: {fileID: 154839343}
+  wCigarette: {fileID: 866830234}
   woCigarette: {fileID: 758579747}
   cigaretteBox: {fileID: 150522695}
   mAnimator: {fileID: 1154591706}
@@ -2785,7 +2898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a6e7c3f548ce64786c7c9fae748fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wCigarette: {fileID: 154839343}
+  wCigarette: {fileID: 866830234}
   woCigarette: {fileID: 758579747}
   cigarette: {fileID: 84703670}
 --- !u!1 &1194417495

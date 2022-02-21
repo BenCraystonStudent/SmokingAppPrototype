@@ -1871,6 +1871,7 @@ MonoBehaviour:
   cigaretteBox: {fileID: 0}
   heldCigarette: {fileID: 0}
   mAnimator: {fileID: 0}
+  nAnimator: {fileID: 0}
 --- !u!1 &1025284018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1901,6 @@ Transform:
   m_Children:
   - {fileID: 473724273}
   - {fileID: 1154591700}
-  - {fileID: 1128728085}
   m_Father: {fileID: 848734326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1914,7 +1914,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.865
+      value: 24.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
@@ -2362,15 +2362,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128728084}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 862428913}
   - {fileID: 1400249370}
   - {fileID: 1033727626}
-  m_Father: {fileID: 1025284019}
-  m_RootOrder: 2
+  m_Father: {fileID: 1154591700}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1128728086
 MonoBehaviour:
@@ -2545,6 +2545,7 @@ MonoBehaviour:
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
   mAnimator: {fileID: 758579748}
+  nAnimator: {fileID: 862428914}
 --- !u!114 &1128728091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,7 +2664,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.921
+      value: 21.86
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
@@ -2698,7 +2699,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb29919d3fa3c13448abf1922a0abde3,
         type: 3}
@@ -2779,6 +2780,7 @@ Transform:
   - {fileID: 386685556}
   - {fileID: 84703674}
   - {fileID: 866830235}
+  - {fileID: 1128728085}
   m_Father: {fileID: 1025284019}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2898,6 +2900,7 @@ MonoBehaviour:
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
   mAnimator: {fileID: 1154591706}
+  nAnimator: {fileID: 862428914}
 --- !u!114 &1154591705
 MonoBehaviour:
   m_ObjectHideFlags: 0

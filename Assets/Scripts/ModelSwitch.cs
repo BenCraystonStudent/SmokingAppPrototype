@@ -19,6 +19,8 @@ public class ModelSwitch : MonoBehaviour
         wCigaretteR.SetActive(false);
         mAnimator = cigaretteBox.GetComponent<Animator>();
         mAnimator.GetBool("boxAction");
+        mAnimator.GetBool("isCloseToBox");
+        mAnimator.GetBool("isGrabbingBox");
     }
 
     public void ChangeModels()
@@ -43,6 +45,9 @@ public class ModelSwitch : MonoBehaviour
             woCigarette.SetActive(true);
             wCigaretteR.SetActive(true);
             woCigaretteR.SetActive(false);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
         }
 
     }
@@ -55,6 +60,9 @@ public class ModelSwitch : MonoBehaviour
             woCigarette.SetActive(false);
             woCigaretteR.SetActive(true);
             wCigaretteR.SetActive(false);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
         }
     }
 
@@ -62,6 +70,8 @@ public class ModelSwitch : MonoBehaviour
     {
         boxDistance = Vector3.Distance(woCigarette.transform.position, cigaretteBox.transform.position);
         cigaretteDistance = Vector3.Distance(heldCigarette.transform.position, wCigarette.transform.position);
-        Debug.Log(mAnimator.GetBool("boxAction").ToString());
+        Debug.Log(mAnimator.GetBool("boxAction").ToString() + "boxAction");
+        Debug.Log(mAnimator.GetBool("isCloseToBox").ToString() + "isCloseToBox");
+        Debug.Log(mAnimator.GetBool("isGrabbingBox").ToString() + "isGrabbingBox");
     }
 }

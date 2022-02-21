@@ -2587,7 +2587,7 @@ MonoBehaviour:
   wCigaretteR: {fileID: 1400249369}
   woCigaretteR: {fileID: 862428912}
   cigarette: {fileID: 978002432}
-  mAnimator: {fileID: 150522696}
+  mAnimator: {fileID: 862428914}
 --- !u!95 &1128728092
 Animator:
   serializedVersion: 3
@@ -2597,7 +2597,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128728084}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 4f7574605ea6e364e87ab56957ffdd20, type: 3}
   m_Controller: {fileID: 9100000, guid: 67defcfcab4d51c4c98dcf1934e71dfc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

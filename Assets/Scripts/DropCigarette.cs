@@ -12,6 +12,7 @@ public class DropCigarette : MonoBehaviour
     void Start()
     {
         wCigarette.SetActive(false);
+        woCigaretteR.SetActive(true);
     }
 
     // Update is called once per frame

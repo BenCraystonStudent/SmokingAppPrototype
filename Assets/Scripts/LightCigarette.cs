@@ -27,6 +27,7 @@ public class LightCigarette : MonoBehaviour
         if (lighterFireDistance < 0.05f && lighterFire.isPlaying)
         {
             litCylinderMesh.enabled = true;
+            isLit = true;
         }
     }
 }

@@ -2629,6 +2629,7 @@ GameObject:
   - component: {fileID: 1128728091}
   - component: {fileID: 1128728092}
   - component: {fileID: 1128728093}
+  - component: {fileID: 1128728094}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -2868,6 +2869,20 @@ MonoBehaviour:
   litCylinder: {fileID: 248959667}
   lighterFire: {fileID: 1424655800}
   isLit: 0
+--- !u!114 &1128728094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128728084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8debf2c223f063f418b213231c30a07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 1154591699}
+  rightHand: {fileID: 1128728084}
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3082,7 @@ GameObject:
   - component: {fileID: 1154591706}
   - component: {fileID: 1154591707}
   - component: {fileID: 1154591708}
+  - component: {fileID: 1154591709}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -3322,6 +3338,20 @@ MonoBehaviour:
   litCylinder: {fileID: 1947161282}
   lighterFire: {fileID: 1424655800}
   isLit: 0
+--- !u!114 &1154591709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154591699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8debf2c223f063f418b213231c30a07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 1154591699}
+  rightHand: {fileID: 1128728084}
 --- !u!1 &1188714973
 GameObject:
   m_ObjectHideFlags: 0

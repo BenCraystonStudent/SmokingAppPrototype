@@ -2833,6 +2833,8 @@ MonoBehaviour:
   wCigaretteR: {fileID: 1400249369}
   woCigaretteR: {fileID: 862428912}
   cigarette: {fileID: 978002432}
+  rightHand: {fileID: 1128728084}
+  leftHand: {fileID: 1154591699}
   mAnimator: {fileID: 862428914}
 --- !u!95 &1128728092
 Animator:
@@ -3295,7 +3297,7 @@ Animator:
   m_GameObject: {fileID: 1154591699}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dc9d85e09124dfd4190cea6b9479c82b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 67defcfcab4d51c4c98dcf1934e71dfc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3321,6 +3323,8 @@ MonoBehaviour:
   wCigaretteR: {fileID: 1400249369}
   woCigaretteR: {fileID: 862428912}
   cigarette: {fileID: 84703670}
+  rightHand: {fileID: 1128728084}
+  leftHand: {fileID: 1154591699}
   mAnimator: {fileID: 0}
 --- !u!114 &1154591708
 MonoBehaviour:

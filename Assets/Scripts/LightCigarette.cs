@@ -18,12 +18,22 @@ public class LightCigarette : MonoBehaviour
         litCylinderMeshRight.enabled = false;
         leftTrail.emitting = false;
         rightTrail.emitting = false;
-       
+        leftSmoke.Play(false);
+        rightSmoke.Play(false);
     }
 
-    public void LightCigaretteMethod()
+    public void CigaretteSmoke()
     {
-        lighterFireDistanceL = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
+        if (isLit)
+        {
+            leftSmoke.Play();
+            rightSmoke.Play();
+        }
+        else
+        {
+            leftSmoke.Stop();
+            rightSmoke.Stop();
+        }
     }
 
     // Update is called once per frame
@@ -45,9 +55,7 @@ public class LightCigarette : MonoBehaviour
 
         if (isLit)
         {
-            leftSmoke.Play();
             leftTrail.emitting = true;
-            rightSmoke.Play();
             rightTrail.emitting = true;
         }
         else
@@ -55,6 +63,8 @@ public class LightCigarette : MonoBehaviour
             leftTrail.emitting = false;
             rightTrail.emitting = false;
         }
+
+        CigaretteSmoke();
         Debug.Log("From the LightCigarette script: isLit is: " + isLit);
         Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);
         Debug.Log("Cigarette fire right is " + litCylinderMeshRight.enabled);

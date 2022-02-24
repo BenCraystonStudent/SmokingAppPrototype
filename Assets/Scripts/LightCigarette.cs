@@ -13,6 +13,7 @@ public class LightCigarette : MonoBehaviour
     void Start()
     {
         litCylinderMesh.enabled = false;
+        isLit = false;
     }
 
     public void LightCigaretteMethod()
@@ -23,6 +24,7 @@ public class LightCigarette : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("From the LightCigarette script: isLit is: " + isLit);
         lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinder.transform.position);
         if (lighterFireDistance < 0.05f && lighterFire.isPlaying)
         {

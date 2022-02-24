@@ -15,7 +15,7 @@ public class SwitchCigaretteHands : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((leftHand.GetComponent<LightCigarette>().isLit == true) || (rightHand.GetComponent<LightCigarette>().isLit == true))
+        if ((leftHand.GetComponent<LightCigarette>().isLit = true) || (rightHand.GetComponent<LightCigarette>().isLit = true))
         {
             leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = true;
             rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = true;

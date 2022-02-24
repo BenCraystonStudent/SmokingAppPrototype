@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class LightCigarette : MonoBehaviour
 {
-    public MeshRenderer litCylinderMesh;
-    public GameObject litCylinder;
+    public MeshRenderer litCylinderMeshLeft, litCylinderMeshRight;
+    public GameObject litCylinderLeft, litCylinderRight;
     public ParticleSystem lighterFire;
     public bool isLit;
     private float lighterFireDistance, heldCigaretteDistance;
     // Start is called before the first frame update
     void Start()
     {
-        litCylinderMesh.enabled = false;
         isLit = false;
+        litCylinderMeshLeft.enabled = false;
+        litCylinderMeshRight.enabled = false;
     }
 
     public void LightCigaretteMethod()
     {
-        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinder.transform.position);
+        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log("From the LightCigarette script: isLit is: " + isLit);
-        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinder.transform.position);
+        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
         if (lighterFireDistance < 0.05f && lighterFire.isPlaying)
         {
-            litCylinderMesh.enabled = true;
+            litCylinderMeshLeft.enabled = true;
             isLit = true;
         }
     }

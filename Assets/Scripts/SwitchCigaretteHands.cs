@@ -17,8 +17,8 @@ public class SwitchCigaretteHands : MonoBehaviour
     {
         if ((leftHand.GetComponent<LightCigarette>().isLit = true) || (rightHand.GetComponent<LightCigarette>().isLit = true))
         {
-            leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = true;
-            rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = true;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = true;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = true;
         }
     }
 }

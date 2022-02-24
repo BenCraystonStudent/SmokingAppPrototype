@@ -26,9 +26,9 @@ public class DropCigarette : MonoBehaviour
             cigarette = Instantiate(cigarette, handLeftPosition, handLeftRotation);
             //cigarette.transform.localScale = new Vector3(0.52f, 0.52f, 0.52f);
             leftHand.GetComponent<LightCigarette>().isLit = false;
-            leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
             rightHand.GetComponent<LightCigarette>().isLit = false;
-            rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
         }
     }
 
@@ -43,9 +43,9 @@ public class DropCigarette : MonoBehaviour
             mAnimator.SetBool("isGrabbingBox", false);
             mAnimator.SetBool("boxAction", false);
             rightHand.GetComponent<LightCigarette>().isLit = false;
-            rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
             leftHand.GetComponent<LightCigarette>().isLit = false;
-            leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
         }
     }    
 

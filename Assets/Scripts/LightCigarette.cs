@@ -6,31 +6,53 @@ public class LightCigarette : MonoBehaviour
 {
     public MeshRenderer litCylinderMeshLeft, litCylinderMeshRight;
     public GameObject litCylinderLeft, litCylinderRight;
-    public ParticleSystem lighterFire;
-    public bool isLit;
-    private float lighterFireDistance, heldCigaretteDistance;
+    public ParticleSystem lighterFire, leftSmoke, rightSmoke;
+    public TrailRenderer leftTrail, rightTrail;
+    public bool isLit = false;
+    private float lighterFireDistanceL, lighterFireDistanceR;
     // Start is called before the first frame update
     void Start()
     {
         isLit = false;
         litCylinderMeshLeft.enabled = false;
         litCylinderMeshRight.enabled = false;
+        leftTrail.emitting = false;
+        rightTrail.emitting = false;
+       
     }
 
     public void LightCigaretteMethod()
     {
-        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
+        lighterFireDistanceL = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("From the LightCigarette script: isLit is: " + isLit);
-        lighterFireDistance = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
-        if (lighterFireDistance < 0.05f && lighterFire.isPlaying)
+      
+        lighterFireDistanceL = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
+        lighterFireDistanceR = Vector3.Distance(lighterFire.transform.position, litCylinderRight.transform.position);
+        if (lighterFireDistanceL < 0.05 && lighterFire.isPlaying)
         {
             litCylinderMeshLeft.enabled = true;
             isLit = true;
         }
+        if (lighterFireDistanceR < 0.05 && lighterFire.isPlaying)
+        {
+            litCylinderMeshRight.enabled = true;
+            isLit = true;
+        }
+
+        if (isLit == true)
+        {
+            leftSmoke.Play();
+            leftTrail.emitting = true;
+            rightSmoke.Play();
+            rightTrail.emitting = true;
+        }
+        Debug.Log("From the LightCigarette script: isLit is: " + isLit);
+        Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);
+        Debug.Log("Cigarette fire right is " + litCylinderMeshRight.enabled);
+
     }
 }

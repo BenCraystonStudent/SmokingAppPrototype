@@ -2493,7 +2493,6 @@ GameObject:
   - component: {fileID: 1128728092}
   - component: {fileID: 1128728093}
   - component: {fileID: 1128728094}
-  - component: {fileID: 1128728095}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: GameController
@@ -2726,14 +2725,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128728084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70b0f416577e1944c8e55517fd22fc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  litCylinderMesh: {fileID: 248959670}
-  litCylinder: {fileID: 248959667}
+  litCylinderMeshLeft: {fileID: 1947161285}
+  litCylinderMeshRight: {fileID: 248959670}
+  litCylinderLeft: {fileID: 1947161282}
+  litCylinderRight: {fileID: 248959667}
   lighterFire: {fileID: 1424655800}
+  leftSmoke: {fileID: 1632556816}
+  rightSmoke: {fileID: 1825006644}
+  leftTrail: {fileID: 1387191377}
+  rightTrail: {fileID: 2127582617}
   isLit: 0
 --- !u!114 &1128728094
 MonoBehaviour:
@@ -2749,22 +2754,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 1154591699}
   rightHand: {fileID: 1128728084}
---- !u!114 &1128728095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128728084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33399b73e59a43e4795fd56fb36d5f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 1154591699}
-  rightHand: {fileID: 1128728084}
-  smoke: {fileID: 1825006644}
-  smokeTrail: {fileID: 2127582617}
 --- !u!1 &1151802277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,7 +2954,6 @@ GameObject:
   - component: {fileID: 1154591707}
   - component: {fileID: 1154591708}
   - component: {fileID: 1154591709}
-  - component: {fileID: 1154591710}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -3219,9 +3207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b0f416577e1944c8e55517fd22fc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  litCylinderMesh: {fileID: 1947161285}
-  litCylinder: {fileID: 1947161282}
+  litCylinderMeshLeft: {fileID: 1947161285}
+  litCylinderMeshRight: {fileID: 248959670}
+  litCylinderLeft: {fileID: 1947161282}
+  litCylinderRight: {fileID: 248959667}
   lighterFire: {fileID: 1424655800}
+  leftSmoke: {fileID: 1632556816}
+  rightSmoke: {fileID: 1825006644}
+  leftTrail: {fileID: 1387191377}
+  rightTrail: {fileID: 2127582617}
   isLit: 0
 --- !u!114 &1154591709
 MonoBehaviour:
@@ -3237,22 +3231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 1154591699}
   rightHand: {fileID: 1128728084}
---- !u!114 &1154591710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154591699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33399b73e59a43e4795fd56fb36d5f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 1154591699}
-  rightHand: {fileID: 1128728084}
-  smoke: {fileID: 1632556816}
-  smokeTrail: {fileID: 1387191377}
 --- !u!1 &1194417495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,7 +3781,7 @@ GameObject:
   - component: {fileID: 1387191376}
   - component: {fileID: 1387191377}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: LeftCigTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9230,7 +9208,7 @@ GameObject:
   - component: {fileID: 1632556816}
   - component: {fileID: 1632556815}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: LeftCigSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14068,7 +14046,7 @@ GameObject:
   - component: {fileID: 1825006644}
   - component: {fileID: 1825006643}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: RightCigSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19433,7 +19411,7 @@ GameObject:
   - component: {fileID: 2127582616}
   - component: {fileID: 2127582617}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: RightCigTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

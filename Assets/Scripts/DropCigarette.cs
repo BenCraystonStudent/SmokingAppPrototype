@@ -51,10 +51,14 @@ public class DropCigarette : MonoBehaviour
 
     void Update()
     {
-        handLeftPosition = woCigarette.transform.position;
-        handLeftRotation = woCigarette.transform.rotation;
-        handRightPosition = woCigarette.transform.position;
-        handRightRotation = woCigaretteR.transform.rotation;
-       // Destroy(cigarette, 4.0f);
+        handLeftPosition = leftHand.transform.position;
+        handLeftRotation = leftHand.transform.rotation;
+        handRightPosition = rightHand.transform.position;
+        handRightRotation = rightHand.transform.rotation;
+        //leftHand.GetComponent<LightCigarette>().isLit = false;
+       // rightHand.GetComponent<LightCigarette>().isLit = false;
+       // leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
+       // rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
+        // Destroy(cigarette, 4.0f);
     }
 }

@@ -43,12 +43,17 @@ public class LightCigarette : MonoBehaviour
             isLit = true;
         }
 
-        if (isLit == true)
+        if (isLit)
         {
             leftSmoke.Play();
             leftTrail.emitting = true;
             rightSmoke.Play();
             rightTrail.emitting = true;
+        }
+        else
+        {
+            leftTrail.emitting = false;
+            rightTrail.emitting = false;
         }
         Debug.Log("From the LightCigarette script: isLit is: " + isLit);
         Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);

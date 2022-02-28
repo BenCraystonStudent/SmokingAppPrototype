@@ -39,19 +39,17 @@ public class LightCigarette : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         lighterFireDistanceL = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
         lighterFireDistanceR = Vector3.Distance(lighterFire.transform.position, litCylinderRight.transform.position);
 
         if (lighterFireDistanceL < 0.05 && lighterFire.isPlaying)
         {
-            isLit = true;
             litCylinderMeshLeft.enabled = true;
             isLit = true;
         }
         if (lighterFireDistanceR < 0.05 && lighterFire.isPlaying)
         {
-            isLit = true;
             litCylinderMeshRight.enabled = true;
             isLit = true;
         }

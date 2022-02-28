@@ -26,7 +26,7 @@ public class InhaleExhale : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other == lcigarette || rcigarette)
+        if ((other == lcigarette || rcigarette) && VRcamera.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled)
         {
             mBlownSmoke.Play();
         }

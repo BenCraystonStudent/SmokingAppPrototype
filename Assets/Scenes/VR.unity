@@ -781,13 +781,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196774031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.57049304, y: 0.748, z: 1.0912623}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.007, y: 0.0193, z: -0.023}
   m_LocalScale: {x: 0.15457, y: 0.15457, z: 0.15457}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &196774036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,9 +802,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inhaleExhaleTracker: {fileID: 196774031}
   VRcamera: {fileID: 473724268}
+  leftHand: {fileID: 1154591699}
+  rightHand: {fileID: 1128728084}
   lcigarette: {fileID: 1491565183}
   rcigarette: {fileID: 270856}
   mBlownSmoke: {fileID: 196774038}
+  sensitivity: 0.05
+  exhaling: 0
 --- !u!199 &196774037
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -824,8 +828,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 1160e8883855b22488d861794af89cd2, type: 2}
+  - {fileID: 2100000, guid: a1d36d739c2141b41a00bdf46f40dcb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -877,13 +881,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196774031}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -942,7 +946,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -1121,7 +1125,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1443,7 +1447,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.0625
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1504,7 +1508,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0.2, y: 0.5, z: 0.2}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1583,7 +1587,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -1702,7 +1706,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1812,7 +1816,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4714,7 +4718,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 0
+    enabled: 1
     mode: 0
     ratio: 1
     lifetime:
@@ -6367,9 +6371,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inhaleExhaleTracker: {fileID: 0}
   VRcamera: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   lcigarette: {fileID: 0}
   rcigarette: {fileID: 0}
   mBlownSmoke: {fileID: 0}
+  sensitivity: 0
+  exhaling: 0
 --- !u!1 &523322132
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class InhaleExhale : MonoBehaviour
 {
     public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette;
     public ParticleSystem mBlownSmoke;
+    ParticleSystem.EmissionModule mEmissionModule;
+    ParticleSystem.MainModule mMainModule;
     private float distanceLeft, distanceRight;
     AudioClip microphoneInput;
     bool microphoneInitialized;
@@ -18,7 +20,9 @@ public class InhaleExhale : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        mEmissionModule = mBlownSmoke.emission;
+        mMainModule = mBlownSmoke.main;
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
         inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
         mBlownSmoke.Play(false);
@@ -36,11 +40,14 @@ public class InhaleExhale : MonoBehaviour
         chargedLevel = level;
     }
 
-    void Exhale()
+    void Exhale(float chargedLevel)
     {
-        mBlownSmoke.emissionRate = level * 1000;
-       // mBlownSmoke.startDelay = chargedLevel * 10;
-        mBlownSmoke.Play(true);
+        while (noise)
+        {
+            mEmissionModule.rateOverTime = chargedLevel * 2500;
+            // mBlownSmoke.startDelay = chargedLevel * 10;
+            mBlownSmoke.Play(true);
+        }
         chargedLungs = false;
     }
 
@@ -97,13 +104,15 @@ public class InhaleExhale : MonoBehaviour
 
         else if (distanceRight > 0.2 && noise && chargedLungs)
         {
-            Exhale();
+            chargedLevel = level;
+            Exhale(chargedLevel);
         }
 
 
         else if (distanceLeft > 0.2 && noise && chargedLungs)
         {
-            Exhale();
+            chargedLevel = level;
+            Exhale(chargedLevel);
         }
 
         Debug.Log("Level: " + level);

@@ -21,10 +21,10 @@ public class SmokingBehaviour : MonoBehaviour
     void Update()
     {
         Debug.Log("From SmokingBehaviour: The left hand is lit: " + isLitSB);
-       /* if ((leftHand.GetComponent<LightCigarette>().isLit = true) || (rightHand.GetComponent<LightCigarette>().isLit = true))
-        {
-            smoke.Play();
-            smokeTrail.emitting = true;
-        } */
+        //if ((leftHand.GetComponent<LightCigarette>().isLit == true) || (rightHand.GetComponent<LightCigarette>().isLit == true))
+        // {
+        //    smoke.Play();
+        //    smokeTrail.emitting = true;
+        // } 
     }
 }

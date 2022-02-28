@@ -42,6 +42,7 @@ public class LightCigarette : MonoBehaviour
       
         lighterFireDistanceL = Vector3.Distance(lighterFire.transform.position, litCylinderLeft.transform.position);
         lighterFireDistanceR = Vector3.Distance(lighterFire.transform.position, litCylinderRight.transform.position);
+
         if (lighterFireDistanceL < 0.05 && lighterFire.isPlaying)
         {
             litCylinderMeshLeft.enabled = true;

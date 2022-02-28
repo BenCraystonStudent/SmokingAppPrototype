@@ -794,7 +794,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inhaleExhaleTracker: {fileID: 196774031}
   VRcamera: {fileID: 473724268}
-  mBlownSmoke: {fileID: 0}
 --- !u!1001 &212813979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1635,7 +1634,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inhaleExhaleTracker: {fileID: 0}
   VRcamera: {fileID: 0}
-  mBlownSmoke: {fileID: 0}
 --- !u!1 &523322132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,7 +3084,7 @@ GameObject:
   - component: {fileID: 1154591709}
   m_Layer: 0
   m_Name: LeftHand
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

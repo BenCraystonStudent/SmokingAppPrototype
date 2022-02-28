@@ -5,8 +5,9 @@ using UnityEngine;
 public class InhaleExhale : MonoBehaviour
 {
     AudioClip micAudio;
-    public GameObject inhaleExhaleTracker, VRcamera;
+    public GameObject inhaleExhaleTracker, VRcamera, lcigarette, rcigarette;
     public ParticleSystem mBlownSmoke;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class InhaleExhale : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "HeldCigarette")
+        if (other == lcigarette || rcigarette)
         {
             mBlownSmoke.Play();
         }
@@ -33,7 +34,7 @@ public class InhaleExhale : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "HeldCigarette")
+        if(other == rcigarette || lcigarette)
         {
             mBlownSmoke.Stop();
         }

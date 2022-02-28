@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeldCigaretteLeft
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 80d6e88b9bec67444893da20300fe82e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 80d6e88b9bec67444893da20300fe82e,
         type: 3}
       propertyPath: m_Name
@@ -1338,6 +1343,7 @@ GameObject:
   - component: {fileID: 473724269}
   - component: {fileID: 473724274}
   - component: {fileID: 473724275}
+  - component: {fileID: 473724278}
   m_Layer: 0
   m_Name: VR Camera
   m_TagString: Untagged
@@ -1520,6 +1526,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23999381, y: 0.2123015, z: 0.104810774}
   m_Center: {x: -0.03523308, y: 0.031701326, z: 0.18357614}
+--- !u!114 &473724278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473724268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75d8ff81b011eb428ea86fd4b3c02e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mBlownSmoke: {fileID: 0}
 --- !u!1 &523322132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,6 +4021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HeldCigaretteRight
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 3d4ee65b9191b73489e188c2b3cb7d77,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3d4ee65b9191b73489e188c2b3cb7d77,
         type: 3}

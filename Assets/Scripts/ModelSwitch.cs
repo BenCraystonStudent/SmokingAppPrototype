@@ -65,8 +65,5 @@ public class ModelSwitch : MonoBehaviour
     {
         boxDistance = Vector3.Distance(woCigarette.transform.position, cigaretteBox.transform.position);
         cigaretteDistance = Vector3.Distance(heldCigarette.transform.position, wCigarette.transform.position);
-        Debug.Log(mAnimator.GetBool("boxAction").ToString() + "boxAction");
-        Debug.Log(mAnimator.GetBool("isCloseToBox").ToString() + "isCloseToBox");
-        Debug.Log(mAnimator.GetBool("isGrabbingBox").ToString() + "isGrabbingBox");
     }
 }

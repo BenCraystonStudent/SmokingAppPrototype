@@ -26,9 +26,9 @@ public class DropCigarette : MonoBehaviour
             cigarette = Instantiate(cigarette, handLeftPosition, handLeftRotation);
             //cigarette.transform.localScale = new Vector3(0.52f, 0.52f, 0.52f);
             leftHand.GetComponent<LightCigarette>().isLit = false;
-            leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
             rightHand.GetComponent<LightCigarette>().isLit = false;
-            rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
         }
     }
 
@@ -43,18 +43,22 @@ public class DropCigarette : MonoBehaviour
             mAnimator.SetBool("isGrabbingBox", false);
             mAnimator.SetBool("boxAction", false);
             rightHand.GetComponent<LightCigarette>().isLit = false;
-            rightHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
             leftHand.GetComponent<LightCigarette>().isLit = false;
-            leftHand.GetComponent<LightCigarette>().litCylinderMesh.enabled = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
         }
     }    
 
     void Update()
     {
-        handLeftPosition = woCigarette.transform.position;
-        handLeftRotation = woCigarette.transform.rotation;
-        handRightPosition = woCigarette.transform.position;
-        handRightRotation = woCigaretteR.transform.rotation;
-       // Destroy(cigarette, 4.0f);
+        handLeftPosition = leftHand.transform.position;
+        handLeftRotation = leftHand.transform.rotation;
+        handRightPosition = rightHand.transform.position;
+        handRightRotation = rightHand.transform.rotation;
+        //leftHand.GetComponent<LightCigarette>().isLit = false;
+       // rightHand.GetComponent<LightCigarette>().isLit = false;
+       // leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
+       // rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
+        // Destroy(cigarette, 4.0f);
     }
 }

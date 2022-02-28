@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CigaretteBoxCollider
   - LeftHandCollider
+  - HeldCigarette
   layers:
   - Default
   - TransparentFX

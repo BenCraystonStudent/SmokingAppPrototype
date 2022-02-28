@@ -8,7 +8,7 @@ public class LightCigarette : MonoBehaviour
     public GameObject litCylinderLeft, litCylinderRight;
     public ParticleSystem lighterFire, leftSmoke, rightSmoke;
     public TrailRenderer leftTrail, rightTrail;
-    public bool isLit = false;
+    public bool isLit;
     private float lighterFireDistanceL, lighterFireDistanceR;
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,8 @@ public class LightCigarette : MonoBehaviour
         litCylinderMeshRight.enabled = false;
         leftTrail.emitting = false;
         rightTrail.emitting = false;
-        leftSmoke.Play(false);
-        rightSmoke.Play(false);
+        leftSmoke.Stop();
+        rightSmoke.Stop();
     }
 
     public void CigaretteSmoke()

@@ -7,6 +7,7 @@ public class InhaleExhale : MonoBehaviour
     AudioClip micAudio;
     public GameObject inhaleExhaleTracker, VRcamera, leftHand, lcigarette, rcigarette;
     public ParticleSystem mBlownSmoke;
+    private float distance;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,12 @@ public class InhaleExhale : MonoBehaviour
     {
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
         inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
+        distance = Vector3.Distance(lcigarette.transform.position, inhaleExhaleTracker.transform.position);
+        if ((distance < 0.9) && leftHand.GetComponent<LightCigarette>().leftSmoke.isPlaying)
+        {
+            Exhale();
+        }
+        Debug.Log(distance);
     }
 
     void Exhale()
@@ -29,19 +36,7 @@ public class InhaleExhale : MonoBehaviour
         mBlownSmoke.Play(true);
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if ((other == lcigarette) && (leftHand.GetComponent<LightCigarette>().leftSmoke.isPlaying)) 
-        {
-            Exhale();
-        }
-    }
+    
 
-    //void OnTriggerExit(Collider other)
-   // {
-   //     if(other == rcigarette || lcigarette)
-   //     {
-   //         mBlownSmoke.Pause();
-   //     }
-  //  }
+    
 }

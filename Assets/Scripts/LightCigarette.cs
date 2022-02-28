@@ -68,10 +68,10 @@ public class LightCigarette : MonoBehaviour
         }
 
         CigaretteSmoke();
-        Debug.Log("From the LightCigarette script: isLit is: " + isLit);
-        Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);
-        Debug.Log("Cigarette fire right is " + litCylinderMeshRight.enabled);
-        Debug.Log("Emitting? " + leftTrail.emitting);
+       // Debug.Log("From the LightCigarette script: isLit is: " + isLit);
+       // Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);
+       // Debug.Log("Cigarette fire right is " + litCylinderMeshRight.enabled);
+       // Debug.Log("Emitting? " + leftTrail.emitting);
 
     }
 }

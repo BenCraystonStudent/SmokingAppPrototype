@@ -48,6 +48,8 @@ public class LightCigarette : MonoBehaviour
             litCylinderMeshLeft.enabled = true;
             isLit = true;
         }
+       
+        
         if (lighterFireDistanceR < 0.05 && lighterFire.isPlaying)
         {
             litCylinderMeshRight.enabled = true;
@@ -69,6 +71,7 @@ public class LightCigarette : MonoBehaviour
         Debug.Log("From the LightCigarette script: isLit is: " + isLit);
         Debug.Log("Cigarette fire is " + litCylinderMeshLeft.enabled);
         Debug.Log("Cigarette fire right is " + litCylinderMeshRight.enabled);
+        Debug.Log("Emitting? " + leftTrail.emitting);
 
     }
 }

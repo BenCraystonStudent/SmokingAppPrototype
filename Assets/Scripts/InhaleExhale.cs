@@ -14,7 +14,7 @@ public class InhaleExhale : MonoBehaviour
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
         inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
         micAudio = Microphone.Start("Rift Audio", true, 3, 44100);
-        mBlownSmoke.Stop();
+        mBlownSmoke.Play(false);
     }
 
     // Update is called once per frame
@@ -26,9 +26,9 @@ public class InhaleExhale : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if ((other == lcigarette || rcigarette) && VRcamera.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled)
+        if (other.gameObject == lcigarette)
         {
-            mBlownSmoke.Play();
+            mBlownSmoke.Play(true);
         }
     }
 
@@ -36,7 +36,7 @@ public class InhaleExhale : MonoBehaviour
     {
         if(other == rcigarette || lcigarette)
         {
-            mBlownSmoke.Stop();
+            mBlownSmoke.Play(false);
         }
     }
 }

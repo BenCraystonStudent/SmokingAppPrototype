@@ -8,6 +8,7 @@ public class DropCigarette : MonoBehaviour
     private Vector3 handLeftPosition, handRightPosition;
     private Quaternion handLeftRotation, handRightRotation;
     public Animator mAnimator;
+    public bool hasDroppedR;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +35,11 @@ public class DropCigarette : MonoBehaviour
 
     public void DropFromRightHand()
     {
-        if(wCigaretteR.activeSelf)
+        if(wCigaretteR.activeSelf || rSpent.activeSelf)
         {
             woCigaretteR.SetActive(true);
             wCigaretteR.SetActive(false);
+            rSpent.SetActive(false);
             cigarette = Instantiate(cigarette, handRightPosition, handRightRotation);
             mAnimator.SetBool("isCloseToBox", false);
             mAnimator.SetBool("isGrabbingBox", false);
@@ -55,6 +57,7 @@ public class DropCigarette : MonoBehaviour
         handLeftRotation = leftHand.transform.rotation;
         handRightPosition = rightHand.transform.position;
         handRightRotation = rightHand.transform.rotation;
+        hasDroppedR = false;
         //leftHand.GetComponent<LightCigarette>().isLit = false;
        // rightHand.GetComponent<LightCigarette>().isLit = false;
        // leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;

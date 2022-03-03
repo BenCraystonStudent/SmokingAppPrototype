@@ -26,6 +26,6 @@ public class DisableLeftHand : MonoBehaviour
        else
             {
             leftHand.enableInteractions = true;
-        }
+            }
     }
 }

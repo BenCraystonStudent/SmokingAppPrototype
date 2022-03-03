@@ -40,13 +40,13 @@ public class InhaleExhale : MonoBehaviour
         chargedLevel = level;
     }
 
-    void Exhale(float chargedLevel)
+    void Exhale()
     {
-      
-        
-        mEmissionModule.rateOverTime = chargedLevel * 2500;
-       // mBlownSmoke.startDelay = chargedLevel * 10;
-        mBlownSmoke.Play(true);
+        mEmissionModule.rateOverTime = level * 500;
+        // mBlownSmoke.startDelay = chargedLevel * 10;
+        do
+        { mBlownSmoke.Play(true); }
+        while (noise);
         
         chargedLungs = false;
     }
@@ -105,14 +105,14 @@ public class InhaleExhale : MonoBehaviour
         else if (distanceRight > 0.2 && noise && chargedLungs)
         {
             chargedLevel = level;
-            Exhale(chargedLevel);
+            Exhale();
         }
 
 
         else if (distanceLeft > 0.2 && noise && chargedLungs)
         {
             chargedLevel = level;
-            Exhale(chargedLevel);
+            Exhale();
         }
 
         Debug.Log("Level: " + level);

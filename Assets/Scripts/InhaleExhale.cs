@@ -55,7 +55,7 @@ public class InhaleExhale : MonoBehaviour
             smokeCounterLength++;
             noise = false;
         }
-        if (smokeCounterLength > 85)
+        if (smokeCounterLength > 70)
         {
             chargedLungs = false;
             smokeCounterLength = 0;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropCigarette : MonoBehaviour
 {
-    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, rightHand, leftHand, rSpent;
+    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, rightHand, leftHand, rSpent, lSpent;
     private Vector3 handLeftPosition, handRightPosition;
     private Quaternion handLeftRotation, handRightRotation;
     public Animator mAnimator;
@@ -20,10 +20,11 @@ public class DropCigarette : MonoBehaviour
     // Update is called once per frame
     public void DropFromLeftHand()
     {
-        if (wCigarette.activeSelf)
+        if (wCigarette.activeSelf || lSpent.activeSelf)
         {
             woCigarette.SetActive(true);
             wCigarette.SetActive(false);
+            lSpent.SetActive(false);
             cigarette = Instantiate(cigarette, handLeftPosition, handLeftRotation);
             //cigarette.transform.localScale = new Vector3(0.52f, 0.52f, 0.52f);
             leftHand.GetComponent<LightCigarette>().isLit = false;

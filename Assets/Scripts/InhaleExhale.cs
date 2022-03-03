@@ -6,7 +6,7 @@ using System.Linq;
 
 public class InhaleExhale : MonoBehaviour
 {
-    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette, rSpent, rHoldingCigarette;
+    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette, rSpent, rHoldingCigarette, lHoldingCigarette, lSpent;
     public ParticleSystem mBlownSmoke;
     ParticleSystem.EmissionModule mEmissionModule;
     ParticleSystem.MainModule mMainModule;
@@ -24,6 +24,7 @@ public class InhaleExhale : MonoBehaviour
     void Start()
     {
         rSpent.SetActive(false);
+        lSpent.SetActive(false);
         mEmissionModule = mBlownSmoke.emission;
         mMainModule = mBlownSmoke.main;
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
@@ -62,11 +63,21 @@ public class InhaleExhale : MonoBehaviour
         }
     }
 
-    void SpentCigaretteR()
+    void SpentCigarette()
     {
-        rHoldingCigarette.SetActive(false);
-        rSpent.SetActive(true);
-        spentCounter = 0;
+        if (rHoldingCigarette.activeSelf)
+        {
+            rHoldingCigarette.SetActive(false);
+            rSpent.SetActive(true);
+            spentCounter = 0;
+        }
+
+        else if (lHoldingCigarette.activeSelf)
+        {
+            lHoldingCigarette.SetActive(false);
+            lSpent.SetActive(true);
+            spentCounter = 0;
+        }
     }
    
 
@@ -136,7 +147,7 @@ public class InhaleExhale : MonoBehaviour
 
         if (spentCounter >= 2)
         {
-            SpentCigaretteR();
+            SpentCigarette();
         }
 
         

@@ -7044,6 +7044,7 @@ MonoBehaviour:
   cigaretteBox: {fileID: 0}
   heldCigarette: {fileID: 0}
   rSpent: {fileID: 0}
+  lSpent: {fileID: 0}
   mAnimator: {fileID: 0}
 --- !u!4 &917854476 stripped
 Transform:
@@ -7822,6 +7823,7 @@ MonoBehaviour:
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
   rSpent: {fileID: 1132068806}
+  lSpent: {fileID: 469494704}
   mAnimator: {fileID: 758579748}
 --- !u!114 &1128728091
 MonoBehaviour:
@@ -8316,7 +8318,8 @@ MonoBehaviour:
   woCigaretteR: {fileID: 862428912}
   cigaretteBox: {fileID: 150522695}
   heldCigarette: {fileID: 1491565183}
-  rSpent: {fileID: 0}
+  rSpent: {fileID: 1132068806}
+  lSpent: {fileID: 469494704}
   mAnimator: {fileID: 1154591706}
 --- !u!114 &1154591705
 MonoBehaviour:

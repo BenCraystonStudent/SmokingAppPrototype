@@ -55,7 +55,7 @@ public class InhaleExhale : MonoBehaviour
             smokeCounterLength++;
             noise = false;
         }
-        if (smokeCounterLength > 100)
+        if (smokeCounterLength > 85)
         {
             chargedLungs = false;
             smokeCounterLength = 0;
@@ -65,6 +65,8 @@ public class InhaleExhale : MonoBehaviour
 
     void SpentCigarette()
     {
+        rightHand.GetComponent<LightCigarette>().isLit = false;
+        leftHand.GetComponent<LightCigarette>().isLit = false;
         if (rHoldingCigarette.activeSelf)
         {
             rHoldingCigarette.SetActive(false);

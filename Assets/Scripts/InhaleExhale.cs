@@ -6,7 +6,7 @@ using System.Linq;
 
 public class InhaleExhale : MonoBehaviour
 {
-    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette;
+    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette, rSpent;
     public ParticleSystem mBlownSmoke;
     ParticleSystem.EmissionModule mEmissionModule;
     ParticleSystem.MainModule mMainModule;
@@ -17,11 +17,12 @@ public class InhaleExhale : MonoBehaviour
     public bool noise;
     float level, chargedLevel, wavePeak;
     bool chargedLungs;
-    int smokeCounterLength;
+    int smokeCounterLength, spentCounter;
 
     // Start is called before the first frame update
     void Start()
     {
+        rSpent.SetActive(false);
         mEmissionModule = mBlownSmoke.emission;
         mMainModule = mBlownSmoke.main;
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
@@ -56,6 +57,7 @@ public class InhaleExhale : MonoBehaviour
         {
             chargedLungs = false;
             smokeCounterLength = 0;
+            spentCounter++;
         }
     }
 
@@ -121,6 +123,12 @@ public class InhaleExhale : MonoBehaviour
         {
             chargedLevel = level;
             Exhale();
+        }
+
+        else if (spentCounter >= 2)
+        {
+            rcigarette.SetActive(false);
+            rSpent.SetActive(true);
         }
 
         // Debug.Log("Level: " + level);

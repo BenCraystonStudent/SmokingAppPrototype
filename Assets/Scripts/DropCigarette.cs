@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropCigarette : MonoBehaviour
 {
-    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, rightHand, leftHand;
+    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, rightHand, leftHand, rSpent;
     private Vector3 handLeftPosition, handRightPosition;
     private Quaternion handLeftRotation, handRightRotation;
     public Animator mAnimator;

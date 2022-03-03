@@ -43,10 +43,12 @@ public class InhaleExhale : MonoBehaviour
     void Exhale()
     {
         mEmissionModule.rateOverTime = level * 500;
-        // mBlownSmoke.startDelay = chargedLevel * 10;
-        do
-        { mBlownSmoke.Play(true); }
-        while (noise);
+       
+        while (noise)
+        {
+            mBlownSmoke.Play();
+            noise = false;
+        }
         
         chargedLungs = false;
     }

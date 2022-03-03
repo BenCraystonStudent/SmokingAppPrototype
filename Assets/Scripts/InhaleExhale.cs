@@ -13,10 +13,11 @@ public class InhaleExhale : MonoBehaviour
     private float distanceLeft, distanceRight;
     AudioClip microphoneInput;
     bool microphoneInitialized;
-    public float sensitivity;
+    public float sensitivity, smokeLength;
     public bool noise;
-    float level, chargedLevel;
+    float level, chargedLevel, wavePeak;
     bool chargedLungs;
+    int smokeCounterLength;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class InhaleExhale : MonoBehaviour
         mMainModule = mBlownSmoke.main;
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
         inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
-        mBlownSmoke.Play(false);
+        mBlownSmoke.Stop();
 
         if (Microphone.devices.Length > 0)
         {
@@ -42,15 +43,20 @@ public class InhaleExhale : MonoBehaviour
 
     void Exhale()
     {
-        mEmissionModule.rateOverTime = level * 500;
-       
+        mEmissionModule.rateOverTime = level * 1000;
+        smokeLength = mBlownSmoke.main.duration;
         while (noise)
         {
+            smokeLength = level;
             mBlownSmoke.Play();
+            smokeCounterLength++;
             noise = false;
         }
-        
-        chargedLungs = false;
+        if (smokeCounterLength > 100)
+        {
+            chargedLungs = false;
+            smokeCounterLength = 0;
+        }
     }
 
 
@@ -69,7 +75,7 @@ public class InhaleExhale : MonoBehaviour
         float levelMax = 0;
         for (int i = 0; i < dec; i++)
         {
-            float wavePeak = waveData[i] * waveData[i];
+            wavePeak = waveData[i] * waveData[i];
             if (levelMax < wavePeak)
             {
                 levelMax = wavePeak;
@@ -117,9 +123,10 @@ public class InhaleExhale : MonoBehaviour
             Exhale();
         }
 
-        Debug.Log("Level: " + level);
-        Debug.Log("Noise: " + noise);
-        Debug.Log("Charged Lungs: " + chargedLungs);
+        // Debug.Log("Level: " + level);
+        // Debug.Log("Noise: " + noise);
+        //  Debug.Log("Charged Lungs: " + chargedLungs);
+        Debug.Log("Smoke Length: " + smokeCounterLength);
     }
 
     

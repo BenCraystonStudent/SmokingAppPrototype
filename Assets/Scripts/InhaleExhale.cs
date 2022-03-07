@@ -6,20 +6,30 @@ using System.Linq;
 
 public class InhaleExhale : MonoBehaviour
 {
-    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette;
+    public GameObject inhaleExhaleTracker, VRcamera, leftHand, rightHand, lcigarette, rcigarette, rSpent, rHoldingCigarette, lHoldingCigarette, lSpent;
     public ParticleSystem mBlownSmoke;
+    ParticleSystem.EmissionModule mEmissionModule;
+    ParticleSystem.MainModule mMainModule;
     private float distanceLeft, distanceRight;
     AudioClip microphoneInput;
     bool microphoneInitialized;
-    public float sensitivity;
-    public bool exhaling;
+    public float sensitivity, smokeLength;
+    public bool noise;
+    float level, chargedLevel, wavePeak;
+    bool chargedLungs;
+    int smokeCounterLength;
+    public int spentCounter;
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        rSpent.SetActive(false);
+        lSpent.SetActive(false);
+        mEmissionModule = mBlownSmoke.emission;
+        mMainModule = mBlownSmoke.main;
         inhaleExhaleTracker.transform.position = VRcamera.transform.position;
         inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
-        mBlownSmoke.Play(false);
+        mBlownSmoke.Stop();
 
         if (Microphone.devices.Length > 0)
         {
@@ -27,6 +37,53 @@ public class InhaleExhale : MonoBehaviour
             microphoneInitialized = true;
         }
     }
+
+    void Inhale()
+    {
+        chargedLungs = true;
+        chargedLevel = level;
+    }
+
+    void Exhale()
+    {
+        mEmissionModule.rateOverTime = level * 1000;
+        smokeLength = mBlownSmoke.main.duration;
+        while (noise)
+        {
+            smokeLength = level;
+            mBlownSmoke.Play();
+            smokeCounterLength++;
+            noise = false;
+        }
+        if (smokeCounterLength > 70)
+        {
+            chargedLungs = false;
+            smokeCounterLength = 0;
+            spentCounter++;
+        }
+    }
+
+    void SpentCigarette()
+    {
+        rightHand.GetComponent<LightCigarette>().isLit = false;
+        leftHand.GetComponent<LightCigarette>().isLit = false;
+        if (rHoldingCigarette.activeSelf)
+        {
+            rHoldingCigarette.SetActive(false);
+            rSpent.SetActive(true);
+            spentCounter = 0;
+        }
+
+        else if (lHoldingCigarette.activeSelf)
+        {
+            lHoldingCigarette.SetActive(false);
+            lSpent.SetActive(true);
+            spentCounter = 0;
+        }
+    }
+   
+
+
 
 
     // Update is called once per frame
@@ -42,47 +99,68 @@ public class InhaleExhale : MonoBehaviour
         float levelMax = 0;
         for (int i = 0; i < dec; i++)
         {
-            float wavePeak = waveData[i] * waveData[i];
+            wavePeak = waveData[i] * waveData[i];
             if (levelMax < wavePeak)
             {
                 levelMax = wavePeak;
             }
         }
-        float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
+        level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
 
-        if (level > sensitivity && !exhaling)
+        if (level > sensitivity && !noise)
         {
-        
-            exhaling = true;
+            noise = true;
 
     }
-        if (level < sensitivity && exhaling) { 
-            exhaling = false;
+        if (level < sensitivity && noise) {
+            noise = false;
     }
 
     inhaleExhaleTracker.transform.position = VRcamera.transform.position;
     inhaleExhaleTracker.transform.rotation = VRcamera.transform.rotation;
 
-        distanceLeft = Vector3.Distance(lcigarette.transform.position, inhaleExhaleTracker.transform.position);
-        if ((distanceLeft < 0.5) && leftHand.GetComponent<LightCigarette>().leftSmoke.isPlaying && exhaling)
-        {
-            Exhale();
-        }
 
         distanceRight = Vector3.Distance(rcigarette.transform.position, inhaleExhaleTracker.transform.position);
-        if ((distanceRight < 0.5) && rightHand.GetComponent<LightCigarette>().rightSmoke.isPlaying && exhaling)
+        distanceLeft = Vector3.Distance(lcigarette.transform.position, inhaleExhaleTracker.transform.position);
+        if ((distanceLeft < 0.2) && leftHand.GetComponent<LightCigarette>().isLit && noise)
         {
+            chargedLungs = true;
+            Inhale();
+        }
+        else if (distanceRight < 0.2 && rightHand.GetComponent<LightCigarette>().isLit && noise)
+        {
+            chargedLungs = true;
+            Inhale();
+        }
+
+
+        else if (distanceRight > 0.2 && noise && chargedLungs)
+        {
+            chargedLevel = level;
             Exhale();
         }
 
-        Debug.Log("Level: " + level);
-        //Debug.Log(distance);
+
+        else if (distanceLeft > 0.2 && noise && chargedLungs)
+        {
+            chargedLevel = level;
+            Exhale();
+        }
+
+        if (spentCounter >= 2)
+        {
+            SpentCigarette();
+        }
+
+        
+
+        // Debug.Log("Level: " + level);
+        // Debug.Log("Noise: " + noise);
+        //  Debug.Log("Charged Lungs: " + chargedLungs);
+        Debug.Log("Smoke Length: " + smokeCounterLength);
     }
 
-    void Exhale()
-    {
-        mBlownSmoke.Play(true);
-    }
+    
 
     
 

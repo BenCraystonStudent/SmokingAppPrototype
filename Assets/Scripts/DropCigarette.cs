@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DropCigarette : MonoBehaviour
 {
-    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, rightHand, leftHand;
+    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigarette, cigaretteStub, rightHand, leftHand, rSpent, lSpent;
     private Vector3 handLeftPosition, handRightPosition;
     private Quaternion handLeftRotation, handRightRotation;
     public Animator mAnimator;
+    public bool hasDroppedR;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,21 @@ public class DropCigarette : MonoBehaviour
         {
             woCigarette.SetActive(true);
             wCigarette.SetActive(false);
+            lSpent.SetActive(false);
             cigarette = Instantiate(cigarette, handLeftPosition, handLeftRotation);
             //cigarette.transform.localScale = new Vector3(0.52f, 0.52f, 0.52f);
+            leftHand.GetComponent<LightCigarette>().isLit = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
+            rightHand.GetComponent<LightCigarette>().isLit = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
+        }
+
+        else if (lSpent.activeSelf)
+        {
+            woCigarette.SetActive(true);
+            wCigarette.SetActive(false);
+            lSpent.SetActive(false);
+            cigaretteStub = Instantiate(cigaretteStub, handLeftPosition, handLeftRotation);
             leftHand.GetComponent<LightCigarette>().isLit = false;
             leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
             rightHand.GetComponent<LightCigarette>().isLit = false;
@@ -38,6 +52,7 @@ public class DropCigarette : MonoBehaviour
         {
             woCigaretteR.SetActive(true);
             wCigaretteR.SetActive(false);
+            rSpent.SetActive(false);
             cigarette = Instantiate(cigarette, handRightPosition, handRightRotation);
             mAnimator.SetBool("isCloseToBox", false);
             mAnimator.SetBool("isGrabbingBox", false);
@@ -47,6 +62,21 @@ public class DropCigarette : MonoBehaviour
             leftHand.GetComponent<LightCigarette>().isLit = false;
             leftHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
         }
+
+        else if (rSpent.activeSelf)
+        {
+            woCigaretteR.SetActive(true);
+            wCigaretteR.SetActive(false);
+            rSpent.SetActive(false);
+            cigaretteStub = Instantiate(cigaretteStub, handRightPosition, handRightRotation);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
+            leftHand.GetComponent<LightCigarette>().isLit = false;
+            leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;
+            rightHand.GetComponent<LightCigarette>().isLit = false;
+            rightHand.GetComponent<LightCigarette>().litCylinderMeshRight.enabled = false;
+        }
     }    
 
     void Update()
@@ -55,6 +85,7 @@ public class DropCigarette : MonoBehaviour
         handLeftRotation = leftHand.transform.rotation;
         handRightPosition = rightHand.transform.position;
         handRightRotation = rightHand.transform.rotation;
+        hasDroppedR = false;
         //leftHand.GetComponent<LightCigarette>().isLit = false;
        // rightHand.GetComponent<LightCigarette>().isLit = false;
        // leftHand.GetComponent<LightCigarette>().litCylinderMeshLeft.enabled = false;

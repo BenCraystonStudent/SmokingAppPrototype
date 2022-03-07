@@ -5,7 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 public class ModelSwitch : MonoBehaviour
 {
-    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigaretteBox, heldCigarette;
+    public GameObject wCigarette, woCigarette, wCigaretteR, woCigaretteR, cigaretteBox, heldCigarette, rSpent, lSpent;
     public Animator mAnimator;
     private float boxDistance, cigaretteDistance;
 
@@ -45,6 +45,17 @@ public class ModelSwitch : MonoBehaviour
             mAnimator.SetBool("boxAction", false);
         }
 
+        else if (lSpent.activeSelf && cigaretteDistance <= 0.12)
+        {
+            lSpent.SetActive(false);
+            woCigarette.SetActive(true);
+            rSpent.SetActive(true);
+            woCigaretteR.SetActive(false);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
+        }
+
     }
 
     public void SwitchCigaretteHeldHandToLeft()
@@ -55,6 +66,17 @@ public class ModelSwitch : MonoBehaviour
             woCigarette.SetActive(false);
             woCigaretteR.SetActive(true);
             wCigaretteR.SetActive(false);
+            mAnimator.SetBool("isCloseToBox", false);
+            mAnimator.SetBool("isGrabbingBox", false);
+            mAnimator.SetBool("boxAction", false);
+        }
+
+        else if (rSpent.activeSelf && cigaretteDistance <= 0.12 && boxDistance >= 0.15)
+        {
+            rSpent.SetActive(false);
+            woCigarette.SetActive(false);
+            lSpent.SetActive(true);
+            woCigaretteR.SetActive(true);
             mAnimator.SetBool("isCloseToBox", false);
             mAnimator.SetBool("isGrabbingBox", false);
             mAnimator.SetBool("boxAction", false);

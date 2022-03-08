@@ -149,7 +149,7 @@ public class InhaleExhale : MonoBehaviour
             Exhale();
         }
 
-        if (spentCounter >= 20)
+        if (spentCounter >= 15)
         {
             SpentCigarette();
         }

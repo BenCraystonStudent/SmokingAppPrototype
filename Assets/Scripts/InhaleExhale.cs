@@ -50,10 +50,12 @@ public class InhaleExhale : MonoBehaviour
         smokeLength = mBlownSmoke.main.duration;
         while (noise)
         {
-            smokeLength = level;
-            mBlownSmoke.Play();
-            smokeCounterLength++;
-            noise = false;
+            {
+                smokeLength = level;
+                mBlownSmoke.Play();
+                smokeCounterLength++;
+                noise = false;
+            }
         }
         if (smokeCounterLength > 70)
         {
@@ -147,7 +149,7 @@ public class InhaleExhale : MonoBehaviour
             Exhale();
         }
 
-        if (spentCounter >= 2)
+        if (spentCounter >= 9)
         {
             SpentCigarette();
         }
